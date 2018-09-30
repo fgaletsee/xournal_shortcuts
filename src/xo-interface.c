@@ -494,14 +494,14 @@ create_winMain (void)
   gtk_widget_show (editUndo);
   gtk_container_add (GTK_CONTAINER (menuEdit_menu), editUndo);
   gtk_widget_add_accelerator (editUndo, "activate", accel_group,
-                              GDK_Z, (GdkModifierType) GDK_CONTROL_MASK,
+                              GDK_Q, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   editRedo = gtk_image_menu_item_new_from_stock ("gtk-redo", accel_group);
   gtk_widget_show (editRedo);
   gtk_container_add (GTK_CONTAINER (menuEdit_menu), editRedo);
   gtk_widget_add_accelerator (editRedo, "activate", accel_group,
-                              GDK_Y, (GdkModifierType) GDK_CONTROL_MASK,
+                              GDK_W, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   separator3 = gtk_separator_menu_item_new ();
@@ -870,7 +870,7 @@ create_winMain (void)
   gtk_widget_show (toolsPen);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsPen);
   gtk_widget_add_accelerator (toolsPen, "activate", accel_group,
-                              GDK_P, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_1, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsPen), TRUE);
 
@@ -879,7 +879,7 @@ create_winMain (void)
   gtk_widget_show (toolsEraser);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsEraser);
   gtk_widget_add_accelerator (toolsEraser, "activate", accel_group,
-                              GDK_E, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_2, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsEraser), TRUE);
 
@@ -926,7 +926,7 @@ create_winMain (void)
   gtk_widget_show (toolsRuler);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsRuler);
   gtk_widget_add_accelerator (toolsRuler, "activate", accel_group,
-                              GDK_L, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_3, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   separator9 = gtk_separator_menu_item_new ();
@@ -939,7 +939,7 @@ create_winMain (void)
   gtk_widget_show (toolsSelectRegion);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsSelectRegion);
   gtk_widget_add_accelerator (toolsSelectRegion, "activate", accel_group,
-                              GDK_G, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_E, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsSelectRegion), TRUE);
 
