@@ -496,14 +496,19 @@ create_winMain (void)
   gtk_widget_add_accelerator (editUndo, "activate", accel_group,
                               GDK_Q, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
-
+  gtk_widget_add_accelerator (editUndo, "activate", accel_group,
+                              GDK_KP_4, (GdkModifierType) 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   editRedo = gtk_image_menu_item_new_from_stock ("gtk-redo", accel_group);
   gtk_widget_show (editRedo);
   gtk_container_add (GTK_CONTAINER (menuEdit_menu), editRedo);
   gtk_widget_add_accelerator (editRedo, "activate", accel_group,
                               GDK_W, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
-
+  gtk_widget_add_accelerator (editRedo, "activate", accel_group,
+                              GDK_KP_5, (GdkModifierType) 0,
+                              GTK_ACCEL_VISIBLE);
   separator3 = gtk_separator_menu_item_new ();
   gtk_widget_show (separator3);
   gtk_container_add (GTK_CONTAINER (menuEdit_menu), separator3);
@@ -872,6 +877,11 @@ create_winMain (void)
   gtk_widget_add_accelerator (toolsPen, "activate", accel_group,
                               GDK_1, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
+  gtk_widget_add_accelerator (toolsPen, "activate", accel_group,
+                              GDK_KP_1, (GdkModifierType) 0,
+                              GTK_ACCEL_VISIBLE);
+
+                              
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsPen), TRUE);
 
   toolsEraser = gtk_radio_menu_item_new_with_mnemonic (toolsPen_group, _("_Eraser"));
@@ -881,6 +891,10 @@ create_winMain (void)
   gtk_widget_add_accelerator (toolsEraser, "activate", accel_group,
                               GDK_2, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
+  gtk_widget_add_accelerator (toolsEraser, "activate", accel_group,
+                              GDK_KP_2, (GdkModifierType) 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsEraser), TRUE);
 
   toolsHighlighter = gtk_radio_menu_item_new_with_mnemonic (toolsPen_group, _("_Highlighter"));
@@ -928,7 +942,10 @@ create_winMain (void)
   gtk_widget_add_accelerator (toolsRuler, "activate", accel_group,
                               GDK_3, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
-
+  gtk_widget_add_accelerator (toolsRuler, "activate", accel_group,
+                              GDK_KP_3, (GdkModifierType) 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   separator9 = gtk_separator_menu_item_new ();
   gtk_widget_show (separator9);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), separator9);
@@ -941,6 +958,10 @@ create_winMain (void)
   gtk_widget_add_accelerator (toolsSelectRegion, "activate", accel_group,
                               GDK_E, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
+  gtk_widget_add_accelerator (toolsSelectRegion, "activate", accel_group,
+                              GDK_KP_6, (GdkModifierType) 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsSelectRegion), TRUE);
 
   toolsSelectRectangle = gtk_radio_menu_item_new_with_mnemonic (toolsPen_group, _("Select _Rectangle"));
@@ -990,25 +1011,45 @@ create_winMain (void)
   gtk_widget_show (colorBlack);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorBlack);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorBlack), TRUE);
-
+  gtk_widget_add_accelerator (colorBlack, "activate", accel_group,
+                              GDK_KP_7, 0,
+                              GTK_ACCEL_VISIBLE);
+  gtk_widget_add_accelerator (colorBlack, "activate", accel_group,
+                              GDK_A, 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   colorBlue = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_blue"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorBlue));
   gtk_widget_show (colorBlue);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorBlue);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorBlue), TRUE);
-
+  gtk_widget_add_accelerator (colorBlue, "activate", accel_group,
+                              GDK_KP_8, 0,
+                              GTK_ACCEL_VISIBLE);
+  gtk_widget_add_accelerator (colorBlue, "activate", accel_group,
+                              GDK_S, 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   colorRed = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_red"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorRed));
   gtk_widget_show (colorRed);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorRed);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorRed), TRUE);
-
+  gtk_widget_add_accelerator (colorRed, "activate", accel_group,
+                              GDK_KP_9, 0,
+                              GTK_ACCEL_VISIBLE);
+  gtk_widget_add_accelerator (colorRed, "activate", accel_group,
+                              GDK_D, 0,
+                              GTK_ACCEL_VISIBLE);
+                              
   colorGreen = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_green"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorGreen));
   gtk_widget_show (colorGreen);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorGreen);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorGreen), TRUE);
-
+  gtk_widget_add_accelerator (colorGreen, "activate", accel_group,
+                              GDK_F, 0,
+                              GTK_ACCEL_VISIBLE);
   colorGray = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("gr_ay"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorGray));
   gtk_widget_show (colorGray);
